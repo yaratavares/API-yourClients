@@ -2,17 +2,28 @@ import { Request, Response } from "express";
 import collections from "../database.js";
 import Customer from "../models/customerModel.js";
 
-async function getAllClients(req: Request, res: Response){
-    const customers = (await collections.customers.find().toArray());
-    console.log(customers);
+async function getCustomers(req: Request, res: Response){
+    const customers = (await collections.customers.find({}).toArray());
 
-    res.sendStatus(200)
+    res.send(customers)
 }
 
 async function createCustomer(req: Request, res: Response){
     const customer: Customer = req.body;
     console.log(customer)
-    //await collections.customers.insertOne(customer);
+    try {
+
+        await collections.customers.insertOne(customer);
+        res.sendStatus(201)
+    } catch(err){
+        console.log(err)
+    }
 }
 
-export {getAllClients, createCustomer}
+async function deleteCustomers(req: Request, res: Response){
+    await collections.customers.deleteMany({});
+
+    res.sendStatus(200)
+}
+
+export {getCustomers, createCustomer, deleteCustomers}
