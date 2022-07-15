@@ -1,15 +1,12 @@
-import { ObjectId, WithId, Document } from "mongodb";
-import Adress from "./adressModel.js";
-import Category from "./categoryModel.js";
+import { WithId, Document } from "mongodb";
+import Address from "./addressModel.js";
 
 interface Customer extends WithId<Document> {
-    id?: ObjectId
     name: string,
     email: string,
     number: string,
-    customerSince: Date,
-    category: Category,
-    adress: Adress
+    idCategory: number,
+    address: Address
 } 
 
 export default Customer;

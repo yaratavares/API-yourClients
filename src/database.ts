@@ -6,8 +6,12 @@ await client.connect();
 
 const database = client.db(process.env.DATABASE_NAME);
 
-const collections: {customers?: mongoDB.Collection} = {};
-const customerCollection: mongoDB.Collection = database.collection(process.env.DATABASE_CUSTOMER_COLLECTION)
-collections.customers = customerCollection
-//console.log(`Successfully connected to database: ${database.databaseName} and collection: ${customerCollection.collectionName}`)
+const collections: {customers?: mongoDB.Collection, categories?: mongoDB.Collection} = {};
+
+const customerCollection: mongoDB.Collection = database.collection(process.env.DATABASE_CUSTOMER_COLLECTION);
+collections.customers = customerCollection;
+
+const categoryCollection: mongoDB.Collection = database.collection(process.env.DATABASE_CATEGORY_COLLECTION);
+collections.categories = categoryCollection
+
 export default collections;
