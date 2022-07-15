@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 import collections from "../database.js";
 import Category from "../models/categoryModel.js";
 
-export function findCategoryById(categoryId: number): Promise<Category>{
+export function findCategoryById(categoryId: string): Promise<Category>{
     return collections.categories.findOne({_id: new ObjectId(categoryId)}) as Promise<Category>;
 }
 

@@ -5,7 +5,7 @@ interface Customer extends WithId<Document> {
     name: string,
     email: string,
     number: string,
-    idCategory: number,
+    idCategory: string,
     address: Address
 } 
 

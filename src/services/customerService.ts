@@ -1,14 +1,14 @@
 import { ObjectId } from "mongodb"
 import * as customerRepository from "../repositories/customerRepository.js"
-import * as categoryRepository from "../repositories/categoryRepository.js"
 import { conflict, notFound } from "../utils/errorUtils.js"
 import Customer from "../models/customerModel.js"
+import { findCategoryById } from "./categoryService.js"
 
 export interface NewCustomer {
     name: string
     email: string
     number: string
-    idCategory: number
+    idCategory: string
 }
 
 export interface NewAddress{
@@ -25,11 +25,7 @@ export async function createCustomer(newCustomer: NewCustomer, newAdress: NewAdd
         throw conflict("Email already exists");
     }
 
-    const categoryExist = await categoryRepository.findCategoryById(newCustomer.idCategory)
-    console.log(categoryExist)
-    if(!categoryExist){
-        throw notFound("Category not found");
-    }
+    await findCategoryById(newCustomer.idCategory)
 
     await customerRepository.insertCustomer({
       _id: new ObjectId(), ...newCustomer,
@@ -55,16 +51,12 @@ export async function updateCustomer(idCustomer:string, customer: NewCustomer, a
     const customerExist = await customerRepository.findCustomerById(idCustomer);
 
     if (!customerExist){
-        throw notFound("Customer not found")
+        throw notFound("Customer not found");
     }
 
-    const categoryExist = await categoryRepository.findCategoryById(customer.idCategory)
-
-    if(!categoryExist){
-        throw notFound("Category not found");
-    }
+    await findCategoryById(customer.idCategory);
 
     await customerRepository.updateCustomer({
         _id: new ObjectId(idCustomer), ...customer, 
-        address: {...address, _id: new ObjectId()}})
+        address: {...address, _id: new ObjectId()}});
 }
