@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 import collections from "../database.js";
 import Customer from "../models/customerModel.js";
 
-export function findCustomerById(idCustomer: number): Promise<Customer>{
+export function findCustomerById(idCustomer: string): Promise<Customer>{
     return collections.customers.findOne({_id: new ObjectId(idCustomer)}) as Promise<Customer>;
 }
 
@@ -18,13 +18,13 @@ export function insertCustomer(customer : Customer): Promise<any> {
     return collections.customers.insertOne({...customer});
 }
 
-export function deleteCustomer(idCustomer: number): Promise<any>{
+export function deleteCustomer(idCustomer: string): Promise<any>{
     return collections.customers.deleteOne({_id: new ObjectId(idCustomer)});
 }
 
-export function updateCustomer(idCustomer: number, customer: Customer): Promise<any>{
+export function updateCustomer(customer: Customer): Promise<any>{
     return collections.customers.updateOne(
-        {_id: new ObjectId(idCustomer)},
+        {_id: new ObjectId(customer._id)},
         { $set: {...customer}
     });
 }
