@@ -1,5 +1,5 @@
 import Category from "../models/categoryModel.js";
-import * as categoryRepository from "../repositories/categoryRepository.js"
+import categoryRepository from "../repositories/categoryRepository.js"
 import { notFound } from "../utils/errorUtils.js";
 
 export async function findCategoryById(idCategory: string){

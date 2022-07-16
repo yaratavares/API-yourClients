@@ -4,6 +4,8 @@ const client: mongoDB.MongoClient = new mongoDB.MongoClient(process.env.DATABASE
 
 await client.connect();
 
+export {client};
+
 const database = client.db(process.env.DATABASE_NAME);
 
 const collections: {customers?: mongoDB.Collection, categories?: mongoDB.Collection} = {};

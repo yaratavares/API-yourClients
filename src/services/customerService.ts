@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb"
-import * as customerRepository from "../repositories/customerRepository.js"
+import customerRepository from "../repositories/customerRepository.js"
 import { conflict, notFound } from "../utils/errorUtils.js"
 import Customer from "../models/customerModel.js"
 import { findCategoryById } from "./categoryService.js"
