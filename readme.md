@@ -3,10 +3,6 @@
 <p align="center">
     <a href="https://wakatime.com/badge/user/97595b44-027b-4695-a588-53e9c884f7e2/project/5d094088-54c6-430c-a01f-dc0bf4034f8f"><img src="https://wakatime.com/badge/user/97595b44-027b-4695-a588-53e9c884f7e2/project/5d094088-54c6-430c-a01f-dc0bf4034f8f.svg" alt="wakatime"></a>
     <img alt="Repository size" src="https://img.shields.io/github/repo-size/yaratavares/YourCustomers">
-    <a href="https://github.com/yaratavares/API-YourCustomers/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/yaratavares/API-YourCustomers
-">
-  </a>
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"></p>
 </p>
 <p align="center">
@@ -15,8 +11,7 @@
  <a href="#funcionalidades">Funcionalidades</a> •
  <a href="#layout">Layout</a> • 
  <a href="#como-executar">Como executar</a> • 
- <a href="#autora">Autora</a> • 
- <a href="#licença">Licença</a>
+ <a href="#autora">Autora</a>
 </p>
 
 
