@@ -1,8 +1,8 @@
-# API - YourClients
+# API - YourCustomers
 
 ## 💻 Projeto
 
-No app YourClients você pode obter uma lista de todos os seus clientes, adicionar, editar, remover e listar! ✨
+No app YourCustomers você pode obter uma lista de todos os seus clientes, adicionar, editar, remover e listar! ✨
 
 ---
 
