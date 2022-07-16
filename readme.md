@@ -22,7 +22,7 @@ No app YourCustomers você pode obter uma lista de todos os seus clientes, adici
 Este projeto está dividido em duas partes:
 
 1. Backend (este repositório)
-2. Frontend (em construção) 🧭
+2. [Frontend](https://github.com/yaratavares/YourCustomers) 🧭
 
 <!-- 💡 O front-end não precisa que o back-end esteja rodando para funcionamento da aplicação.
 
