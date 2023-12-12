@@ -1,6 +1,15 @@
+# install
 /node_modules
-/dist
-/coverage
+.terraform/
+
+# secrets
 .env
 .env.test
 .env.development
+backend.hcl
+
+# build
+/coverage
+.terraform.lock.hcl
+terraform.tfplan
+/dist
